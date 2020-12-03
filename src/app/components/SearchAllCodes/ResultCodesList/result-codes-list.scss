@@ -1,0 +1,20 @@
+.codes-block__ {
+  &wrapper {
+    max-height: 18.75rem;
+    padding: 1.875rem;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+  }
+
+  &item {
+    margin: 0.3125rem;
+    width: 2.5rem;
+    height: 1.5625rem;
+    border-radius: 20%;
+    border: 1px solid #1e1e1e;
+    text-align: center;
+    line-height: 1.5625rem;
+    font-size: 1rem;
+  }
+}

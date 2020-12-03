@@ -1,0 +1,84 @@
+.country-info__ {
+  &wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: 9.375rem 1fr 1fr;
+    grid-template-areas: "flag column-info-main column-info-addition";
+    margin: 3.125rem 0;
+    padding: 3.125rem;
+    border: 1px solid #4e4e4e;
+    border-radius: 0.25rem;
+
+    @media (max-width: 820px) {
+      padding: 1.725rem;
+      grid-template-columns: 100%;
+      grid-template-areas: 
+        "flag"
+        "column-info-main" 
+        "column-info-addition";
+    }
+  }
+
+  &close {
+    position: absolute;
+    right: 1.25rem;
+    top: 1.25rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    opacity: 0.3;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: transparent;
+    cursor: pointer;
+  
+    &:hover {
+      opacity: 1;
+    }
+
+    &:before, 
+    &:after {
+      position: absolute;
+      top: -0.125rem;
+      left: 0.4375rem;
+      content: '';
+      height: 1.25rem;
+      width: 0.0625rem;
+      background-color: #333;
+    }
+
+    &:before {
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &flag {
+    margin-bottom: 1.25rem;
+    width: 6.25rem;
+    height: auto;
+    grid-area: flag;
+  }
+
+  &column-info {
+    &--main {
+      grid-area: column-info-main;
+    }
+
+    &--additional {
+      grid-area: column-info-addition;
+    }
+  }
+
+  &info-item {
+    display: grid;
+    grid-template-columns: 9.375rem auto;
+  }
+
+  &param-title {  
+    color: #9E2A2B;
+  }
+}

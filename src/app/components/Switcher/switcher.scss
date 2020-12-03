@@ -1,0 +1,72 @@
+$enColor: #335C67;
+$ruColor: #E09F3E;
+
+.switcher__ {
+  &wrapper {
+    width: 5.3125rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &label{
+    position: relative;
+    display: inline-block;
+    width: 1.875rem;
+    height: 1.0625rem;
+  }
+
+  &input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  &slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $enColor;    
+    transition: .4s;
+    border-radius: 1.0625rem;
+  }
+
+  &slider:before {
+    position: absolute;
+    content: "";
+    height: 0.8125rem;
+    width: 0.8125rem;
+    left: 0.125rem;
+    bottom: 0.125rem;
+    background-color: #ffffff;    
+    transition: .4s;
+    border-radius: 50%;
+  }
+
+  &input:checked + .switcher__slider {
+    background-color: $ruColor;
+  }
+
+  &input:focus + .switcher__slider {
+    box-shadow: 0 0 1px $ruColor;
+  }
+
+  &input:checked + .switcher__slider:before {    
+    transform: translateX(0.8125rem);
+  }
+
+  &language {
+    font-weight: bold;
+
+    &--en {
+      color: $enColor
+    }
+
+    &--ru {
+      color: $ruColor
+    }
+  }
+}
